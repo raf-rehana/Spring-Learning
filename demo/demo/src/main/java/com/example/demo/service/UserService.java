@@ -2,19 +2,31 @@ package com.example.demo.service;
 
 import com.example.demo.entity.User;
 import com.example.demo.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
-    public UserRepository userRepository;
 
- public void saveOrUpdate(User user){
-     userRepository.save(user);
- }
+@Autowired
+private UserRepository userRepository;
 
- public List<User> getAll(){
-     return userRepository.findAll();
-    }
+public List<User> getAll(){
+    return userRepository.findAll();}
+
+public User saveOrUpdate(User user){
+    return userRepository.save(user);}
+
+
+public Optional<User> getById(long id){
+    return userRepository.findById(id);
+}
+
+public void delete(long id){
+    userRepository.deleteById(id);
+}
+
 }
