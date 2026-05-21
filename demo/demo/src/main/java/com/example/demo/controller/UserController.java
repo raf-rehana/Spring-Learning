@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/user/")
 public class UserController {
 
     @Autowired
@@ -46,7 +46,7 @@ public class UserController {
                 "User Deleted Successfully"
         );
     }
-    @PutMapping("/{id}")
+    @PutMapping("{id}")
     public ResponseEntity<User> update(
             @PathVariable long id,
             @RequestBody User user){

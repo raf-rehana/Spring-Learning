@@ -5,18 +5,23 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Entity
-@Table(name="departments")
+@Table(name="country")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-
-public class Department {
+public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    @Column(length = 50)
+    private Integer id;
+    @Column(unique = true)
     private String name;
+    private String code;
+
+    @OneToMany
+    private List<Division> divisions;
+
 }

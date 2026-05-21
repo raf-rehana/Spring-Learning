@@ -1,0 +1,8 @@
+$kind: http-request
+name: add
+url: http://localhost:8085/api/dept
+method: POST
+body:
+  type: json
+  content: "{\r\n    \"name\": \"Science\"\r\n}"
+order: 1779359469873
