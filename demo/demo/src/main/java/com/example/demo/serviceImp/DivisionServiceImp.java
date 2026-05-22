@@ -3,6 +3,7 @@ package com.example.demo.serviceImp;
 import com.example.demo.dto.DivisionDTO;
 import com.example.demo.entity.Country;
 import com.example.demo.entity.Division;
+
 import com.example.demo.repository.CountryRepository;
 import com.example.demo.repository.DivisionRepository;
 import com.example.demo.service.DivisionService;
@@ -15,7 +16,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class DivisionServiceImp implements DivisionService {
-
 
     @Autowired
     private DivisionRepository divisionRepository;
@@ -44,7 +44,7 @@ public class DivisionServiceImp implements DivisionService {
 
     @Override
     public void delete(Integer id) {
-    divisionRepository.deleteById(id);
+        divisionRepository.deleteById(id);
     }
 
     @Override
@@ -71,4 +71,6 @@ public class DivisionServiceImp implements DivisionService {
 
         );
     }
+
+
 }
