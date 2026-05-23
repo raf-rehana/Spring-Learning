@@ -24,8 +24,11 @@ public class Country {
     private String code;
 
     @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
-    @JsonIdentityReference(alwaysAsId = true)
-
+    @JsonManagedReference(value = "country-division")
     private List<Division> divisions;
+
+    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
+    @JsonManagedReference(value = "country-user")
+    private List<User> users;
 
 }

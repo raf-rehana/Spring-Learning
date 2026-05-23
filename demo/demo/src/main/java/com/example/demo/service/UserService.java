@@ -1,32 +1,17 @@
 package com.example.demo.service;
-
+import com.example.demo.dto.UserDTO;
 import com.example.demo.entity.User;
-import com.example.demo.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
-@Service
-public class UserService {
+public interface UserService {
+    User save(User user);
+    List<User> findAll();
+    Optional<User> getById(Integer id);
+    void delete(Integer id);
 
-@Autowired
-private UserRepository userRepository;
-
-public List<User> getAll(){
-    return userRepository.findAll();}
-
-public User saveOrUpdate(User user){
-    return userRepository.save(user);}
-
-
-public Optional<User> getById(long id){
-    return userRepository.findById(id);
-}
-
-public void delete(long id){
-    userRepository.deleteById(id);
-}
-
+    List<UserDTO> getUsersByCountryId(Integer countryId);
+    List<UserDTO> getUsersByDivisionId(Integer divisionId);
+    List<UserDTO> getUsersByDistrictId(Integer districtId);
+    List<UserDTO> getUsersByDepartmentId(Integer departmentId);
 }

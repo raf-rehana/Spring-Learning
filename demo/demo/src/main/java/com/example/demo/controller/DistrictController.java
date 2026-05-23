@@ -21,12 +21,12 @@ public class DistrictController {
 
     }
 
-
     @GetMapping
     public ResponseEntity<List<District>> getAll() {
         List<District> list = districtService.findAll();
         return ResponseEntity.ok(list);
     }
+
     @GetMapping("{id}")
     public ResponseEntity<District> findById(@PathVariable("id") Integer id) {
         District district = districtService.getById(id)

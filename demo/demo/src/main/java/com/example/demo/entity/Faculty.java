@@ -1,34 +1,30 @@
 package com.example.demo.entity;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import java.util.List;
 
 @Entity
-@Table(name = "district")
+@Table(name = "faculty")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class District {
+public class Faculty {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(unique = true)
     private String name;
+    private String code;
 
-    @ManyToOne
-    @JoinColumn(name= "division_id")
-    @JsonBackReference(value = "division-district")
-    private Division division;
+    @OneToMany(mappedBy = "faculty", cascade = CascadeType.ALL)
+    @JsonManagedReference(value = "faculty-department")
+    private List<Department> departments;
 
-    @OneToMany(mappedBy = "district", cascade = CascadeType.ALL)
-    @JsonManagedReference(value = "district-user")
+    @OneToMany(mappedBy = "faculty", cascade = CascadeType.ALL)
+    @JsonManagedReference(value = "faculty-user")
     private List<User> users;
 }
