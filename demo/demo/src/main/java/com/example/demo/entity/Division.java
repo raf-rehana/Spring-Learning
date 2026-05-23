@@ -1,5 +1,6 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -22,5 +23,6 @@ public class Division {
 
     @ManyToOne
     @JoinColumn(name= "country_id")
+    @JsonBackReference
     private Country country;
 }

@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,7 +23,9 @@ public class Country {
     private String name;
     private String code;
 
-    @OneToMany
+    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
+    @JsonIdentityReference(alwaysAsId = true)
+
     private List<Division> divisions;
 
 }
