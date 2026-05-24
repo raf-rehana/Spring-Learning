@@ -65,9 +65,9 @@ public class DivisionServiceImp implements DivisionService {
 
         return new DivisionDTO(
                 division.getId(),
-                division.getName(),
+                division.getDivisionName(),
                 division.getCountry().getId(),
-                division.getCountry().getName()
+                division.getCountry().getCountryName()
 
         );
     }

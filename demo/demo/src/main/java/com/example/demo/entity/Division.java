@@ -19,7 +19,7 @@ public class Division {
     private Integer id;
 
     @Column(unique = true)
-    private String name;
+    private String divisionName;
 
     @ManyToOne
     @JoinColumn(name= "country_id")

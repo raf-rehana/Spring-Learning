@@ -94,13 +94,13 @@ public class UserServiceImp implements UserService {
                 user.getName(),
                 user.getEmail(),
                 user.getCountry().getId(),
-                user.getCountry().getName(),
+                user.getCountry().getCountryName(),
                 user.getDivision().getId(),
-                user.getDivision().getName(),
+                user.getDivision().getDivisionName(),
                 user.getDistrict().getId(),
-                user.getDistrict().getName(),
+                user.getDistrict().getDistrictName(),
                 user.getDepartment().getId(),
-                user.getDepartment().getName()
+                user.getDepartment().getDepartmentName()
         );
     }
 }

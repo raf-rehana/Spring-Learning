@@ -20,8 +20,8 @@ public class Country {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(unique = true)
-    private String name;
-    private String code;
+    private String countryName;
+    private String countryCode;
 
     @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
     @JsonManagedReference(value = "country-division")

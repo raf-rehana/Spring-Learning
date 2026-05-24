@@ -1,11 +1,14 @@
 package com.example.demo.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Generated;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -19,7 +22,13 @@ public class User {
     private Integer id;
 
     private String name;
+
+    @Column(unique = true)
     private String email;
+    @Column(unique = true)
+    private String phone;
+    private String password;
+    private String image;
 
     @ManyToOne
     @JoinColumn(name = "country_id")
@@ -45,4 +54,14 @@ public class User {
     @JoinColumn(name = "department_id")
     @JsonBackReference(value = "department-user")
     private Department department;
+
+    @ManyToMany
+    @JoinTable(
+            name = "user_courses",
+            joinColumns = @JoinColumn(name = "user_id"),
+            inverseJoinColumns = @JoinColumn(name = "course_id")
+    )
+    @JsonManagedReference(value = "course-user")
+    private List<Course> courses;
+
 }

@@ -16,9 +16,8 @@ public class Faculty {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-
-    private String name;
-    private String code;
+    private String facultyName;
+    private String facultyCode;
 
     @OneToMany(mappedBy = "faculty", cascade = CascadeType.ALL)
     @JsonManagedReference(value = "faculty-department")

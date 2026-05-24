@@ -1,14 +1,14 @@
 package com.example.demo.repository;
 
-import com.example.demo.entity.Subject;
+import com.example.demo.entity.Course;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface CourseRepository extends JpaRepository<Subject, Integer> {
+public interface CourseRepository extends JpaRepository<Course, Integer> {
 
-    List<Subject> findByDepartmentId(Integer departmentId);
-    List<Subject> findByDepartmentName(String departmentName);
+    List<Course> findByDepartmentId(Integer departmentId);
+    List<Course> findByDepartmentName(String departmentName);
 }

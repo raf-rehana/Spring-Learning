@@ -21,7 +21,7 @@ public class District {
     private Integer id;
 
     @Column(unique = true)
-    private String name;
+    private String districtName;
 
     @ManyToOne
     @JoinColumn(name= "division_id")
