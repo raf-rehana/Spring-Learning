@@ -20,12 +20,15 @@ public class Country {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(unique = true)
-    private String name;
-    private String code;
+    private String countryName;
+    private String countryCode;
 
     @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
-    @JsonIdentityReference(alwaysAsId = true)
-
+    @JsonManagedReference(value = "country-division")
     private List<Division> divisions;
+
+    @OneToMany(mappedBy = "country", cascade = CascadeType.ALL)
+    @JsonManagedReference(value = "country-user")
+    private List<User> users;
 
 }

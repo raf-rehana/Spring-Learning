@@ -61,11 +61,11 @@ public class DistrictServiceImp implements DistrictService {
     private DistrictDTO convertToDTO(District district) {
         return new DistrictDTO(
                 district.getId(),
-                district.getName(),
+                district.getDistrictName(),
                 district.getDivision().getId(),
-                district.getDivision().getName(),
+                district.getDivision().getDivisionName(),
                 district.getDivision().getCountry().getId(),
-                district.getDivision().getCountry().getName()
+                district.getDivision().getCountry().getCountryName()
 
         );
     }
