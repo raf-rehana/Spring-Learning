@@ -9,5 +9,5 @@ import java.util.List;
 public interface DivisionRepository extends JpaRepository<Division, Integer> {
 
     List<Division> findByCountryId(Integer countryId);
-    List<Division> findByCountryName(String countryName);
+    List<Division> findByCountryCountryName(String countryName);
 }

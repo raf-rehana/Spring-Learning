@@ -12,5 +12,5 @@ public interface DistrictRepository extends JpaRepository<District, Integer> {
 
     List<District> findByDivisionId(Integer divisionId);
 
-    List<District> findByDivisionName(String divisionName);
+    List<District> findByDivisionDivisionName(String divisionName);
 }

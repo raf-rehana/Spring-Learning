@@ -54,7 +54,7 @@ public class DistrictServiceImp implements DistrictService {
 
     @Override
     public List<DistrictDTO> getDistrictByDivisionName(String divisionName) {
-        List<District> list = districtRepository.findByDivisionName(divisionName);
+        List<District> list = districtRepository.findByDivisionDivisionName(divisionName);
         return list.stream().map(this::convertToDTO).collect(Collectors.toList());
     }
 
