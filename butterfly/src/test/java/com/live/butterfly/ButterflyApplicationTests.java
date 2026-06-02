@@ -1,10 +1,10 @@
-package com.live.practice;
+package com.live.butterfly;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class PracticeApplicationTests {
+class ButterflyApplicationTests {
 
 	@Test
 	void contextLoads() {

@@ -1,13 +1,13 @@
-package com.live.practice;
+package com.live.butterfly;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PracticeApplication {
+public class ButterflyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(PracticeApplication.class, args);
+		SpringApplication.run(ButterflyApplication.class, args);
 	}
 
 }
