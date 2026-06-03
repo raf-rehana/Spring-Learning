@@ -2,7 +2,6 @@ package com.live.butterfly;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,7 +44,6 @@ public class ProductController {
 
     @PostMapping("cart")
     public String addToCart(@RequestParam String username, @RequestParam int productId) {
-        System.out.println("Adding product ID " + productId + " to cart for user " + username);
         return "success";
     }
 }
