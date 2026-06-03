@@ -1,14 +1,13 @@
 package com.live.butterfly;
-
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.view.RedirectView;
 
-@RestController
-@RequestMapping("/api/")
+@Controller
+@RequestMapping("/api")
 @CrossOrigin(origins = "http://localhost:4200")
 public class RegistrationController {
 
@@ -21,6 +20,6 @@ public class RegistrationController {
             @RequestParam String password,
             @RequestParam String confirmPassword) {
 
-        return new RedirectView("http://localhost:4200/login");
+        return new RedirectView("http://localhost:4200/profile");
     }
 }
