@@ -53,7 +53,7 @@ public class CourseServiceImp implements CourseService {
 
     @Override
     public List<CourseDTO> getCourseByDepartmentName(String departmentName) {
-        List<Course> list = courseRepository.findByDepartmentName(departmentName);
+        List<Course> list = courseRepository.findByDepartmentDepartmentName(departmentName);
         return  list.stream().map(this::convertToDTO).collect(Collectors.toList());
     }
 

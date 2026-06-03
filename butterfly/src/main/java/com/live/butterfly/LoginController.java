@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api")
 @CrossOrigin(origins = "http://localhost:4200")
 public class LoginController {
 
@@ -18,11 +18,11 @@ public class LoginController {
 
     static {
         // Keep the original test user!
-        users.put("rafiaah", "4321ra"); 
+        users.put("rafiaah", "4321ra");
     }
 
     @PostMapping("login")
-    public String loginRequest(@RequestParam String username, @RequestParam String password) {
+    public String loginRequest(@RequestBody Login login) {
 
         // Check if the user exists and the password matches!
         if (users.containsKey(username) && users.get(username).equals(password)) {
