@@ -16,7 +16,6 @@ public class LoginController {
         if ("rafiaah".equals(username) && "ra1234".equals(password)) {
             return "success";
         }
-
         return "failed";
     }
 
