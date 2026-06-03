@@ -21,9 +21,10 @@ public class RegistrationController {
             @RequestParam String password,
             @RequestParam String confirmPassword) {
 
-        // Here you would normally save the user to the database
-        System.out.println("Registering user: " + firstName + " " + lastName);
-        System.out.println("Email: " + email);
+        // Save the user in LoginController's static map so they can log in!
+        LoginController.users.put(email, password);
+        
+        System.out.println("Registered new user: " + email);
 
         // Redirecting back to Angular's login page after successful registration
         return new RedirectView("http://localhost:4200/login");
